@@ -9,6 +9,8 @@ class ShowUserService {
       throw new AppError('User not found.');
     }
 
+    user.password = '';
+
     return user;
   }
 }
