@@ -3,6 +3,7 @@ import 'dotenv/config';
 
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
+import { errors } from 'celebrate';
 
 import MongoConnect from '@config/db/MongoConnect';
 import router from './routes/index';
@@ -14,6 +15,8 @@ const db = new MongoConnect();
 app.use(express.json());
 
 app.use(router);
+
+app.use(errors());
 
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {
