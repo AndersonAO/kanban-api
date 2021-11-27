@@ -1,4 +1,5 @@
 import { connect } from 'mongoose';
+import './InitModels';
 
 class MongoConnect {
   public async connect(): Promise<void> {
