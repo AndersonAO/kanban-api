@@ -1,18 +1,12 @@
 import { Types, Document } from 'mongoose';
 
-interface IComment {
-  user_id: Types.ObjectId | undefined;
-  comment: string;
-}
-
 interface ICard {
   listId: Types.ObjectId | undefined;
   name: string;
-  description: string;
-  comments: IComment[];
+  description?: string;
 }
 
-interface IList {
+interface IList extends Document {
   kanbanId: Types.ObjectId | undefined;
   name: string;
   cards: ICard[];
@@ -23,4 +17,4 @@ interface IKanban extends Document {
   lists: IList[];
 }
 
-export { IKanban, IList, ICard, IComment };
+export { IKanban, IList, ICard };

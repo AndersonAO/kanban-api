@@ -39,7 +39,7 @@ class KanbanRepository {
   }
 
   public async findById({ id }: IFindByIdKanban): Promise<IKanban> {
-    const kanban = await Kanban.findOne({ id });
+    const kanban = await Kanban.findOne({ _id: id });
 
     if (!kanban) {
       throw new AppError("Kanban doesn't exists.");

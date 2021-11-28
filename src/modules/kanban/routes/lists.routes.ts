@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import AUTH from '@shared/http/middlewares/auth';
-import ListsController from '../kanban/controllers/ListsController';
+import ListsController from '../controllers/ListsController';
 
 const listRoutes = Router();
 

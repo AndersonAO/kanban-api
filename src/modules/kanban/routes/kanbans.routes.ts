@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import KanbansController from '../kanban/controllers/KanbansController';
+import KanbansController from '../controllers/KanbansController';
 import AUTH from '@shared/http/middlewares/auth';
 
 const kanbanRoutes = Router();

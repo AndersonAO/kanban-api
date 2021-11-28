@@ -7,6 +7,8 @@ export default class ListsController {
 
     const createList = new CreateListService();
 
+    console.log(request.user.id);
+
     const list = await createList.execute({
       userId: request.user.id,
       kanbanId,

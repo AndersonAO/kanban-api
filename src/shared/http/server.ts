@@ -3,6 +3,7 @@ import 'dotenv/config';
 
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
+import cors from 'cors';
 import { errors } from 'celebrate';
 
 import MongoConnect from '@config/db/MongoConnect';
@@ -11,6 +12,8 @@ import AppError from '@shared/errors/AppError';
 
 const app = express();
 const db = new MongoConnect();
+
+app.use(cors());
 
 app.use(express.json());
 
