@@ -1,6 +1,6 @@
 import { Types, Document } from 'mongoose';
 
-interface ICard {
+interface ICard extends Document {
   listId: Types.ObjectId | undefined;
   name: string;
   description?: string;

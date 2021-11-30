@@ -9,5 +9,7 @@ const cardsController = new CardsController();
 cardRoutes.use(AUTH);
 
 cardRoutes.post('/', cardsController.create);
+cardRoutes.delete('/:id', cardsController.delete);
+cardRoutes.put('/:id', cardsController.update);
 
 export default cardRoutes;
