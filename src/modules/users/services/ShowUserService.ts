@@ -6,7 +6,7 @@ class ShowUserService {
     const user = await User.findOne({ id });
 
     if (!user) {
-      throw new AppError('User not found.');
+      throw new AppError('Usuário não encontrado.');
     }
 
     user.password = '';

@@ -21,13 +21,13 @@ class CreateSessionsService {
     const user = await usersRepository.findByUsername(username);
 
     if (!user) {
-      throw new AppError('Incorrect username/password combination', 401);
+      throw new AppError('Combinação username/password incorreta', 401);
     }
 
     const passwordConfirmed = await compare(password, user.password);
 
     if (!passwordConfirmed) {
-      throw new AppError('Incorrect username/password combination', 401);
+      throw new AppError('Combinação username/password incorreta', 401);
     }
 
     const token = sign({}, authConfig.jwt.secret, {

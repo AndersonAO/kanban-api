@@ -12,7 +12,7 @@ class UserRepository extends User {
     const user = await User.findOne({ _id: id });
 
     if (!user) {
-      throw new AppError('User not found.');
+      throw new AppError('Usuário não encontrado.');
     }
 
     return user;

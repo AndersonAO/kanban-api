@@ -17,7 +17,7 @@ class CreateListService {
     const kanban = await kanbanRepository.findById({ id: kanbanId });
 
     if (String(kanban.userId) !== userId) {
-      throw new AppError('You are not allowed to do this.');
+      throw new AppError('Você não possui permissão.');
     }
 
     const list = await listRepository.createList({ kanbanId, name });

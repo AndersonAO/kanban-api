@@ -21,7 +21,7 @@ class UpdateListService {
     });
 
     if (String(kanban.userId) !== userId) {
-      throw new AppError('You are not allowed to do this.');
+      throw new AppError('Você não tem permissão.');
     }
 
     list.name = name;

@@ -25,7 +25,7 @@ class UpdatePositionListService {
     });
 
     if (String(kanban.userId) !== userId) {
-      throw new AppError('You are not allowed to do this.');
+      throw new AppError('Você não tem permissão.');
     }
 
     await kanban.populate([
@@ -45,7 +45,7 @@ class UpdatePositionListService {
       const listDb = await listRepository.findById(list._id);
 
       if (!listDb) {
-        throw new AppError(`List "${list._id}" not found.`);
+        throw new AppError(`Lista "${list._id}" não encontrada.`);
       }
 
       listDb.cards = list.cards;

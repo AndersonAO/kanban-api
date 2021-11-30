@@ -19,7 +19,7 @@ class CreateUserService {
     const userExists = await userRepository.findByUsername(username);
 
     if (userExists) {
-      throw new AppError('User already exists.');
+      throw new AppError('Usuário já existe.');
     }
 
     password = await hash(password, 10);

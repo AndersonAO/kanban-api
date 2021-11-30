@@ -30,7 +30,7 @@ class KanbanRepository {
     const kanbanExists = await this.findByUserId({ userId });
 
     if (kanbanExists) {
-      throw new AppError('You already have a kanban board.');
+      throw new AppError('Você já tem um quadro kanban.');
     }
 
     const kanban = await Kanban.create({ userId });
@@ -42,7 +42,7 @@ class KanbanRepository {
     const kanban = await Kanban.findOne({ _id: id });
 
     if (!kanban) {
-      throw new AppError("Kanban doesn't exists.");
+      throw new AppError('O Kanban não existe.');
     }
 
     return kanban;
@@ -71,7 +71,7 @@ class KanbanRepository {
 
     if (!deleted) {
       throw new AppError(
-        "Kanban not exists or you don't have permission to delete this.",
+        'Kanban não existente ou você não tem permissões para isso.',
       );
     }
   }

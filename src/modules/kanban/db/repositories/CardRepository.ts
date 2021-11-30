@@ -23,7 +23,7 @@ class CardRepository {
     const card = await Card.findOne({ _id });
 
     if (!card) {
-      throw new AppError(`Card "${_id}" not found.`);
+      throw new AppError(`Cartão "${_id}" não encontrado.`);
     }
 
     return card;

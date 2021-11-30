@@ -14,7 +14,7 @@ class ListRepository {
     const list = await List.findOne({ _id: id });
 
     if (!list) {
-      throw new AppError("List doesn't exists.");
+      throw new AppError('A Lista não existe.');
     }
 
     return list;
